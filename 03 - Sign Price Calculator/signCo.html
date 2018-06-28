@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <title>World's Finest Signs</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center p-2 bg-primary">
+                <h1>Welcome to World's Finest Signs</h1>
+                <p>Please input what you would like your sign to say and we will give you our unbeatable price</p>
+            </div>
+        </div>
+        <div class="row my-2 py-5 text-center">
+            <div class="col-4 text-white bg-dark">
+                <h5>What we charge:</h5>
+                <ul>
+                    <li>$2 for first word</li>
+                    <li>$.75 each word after</li>
+                    <li>$1 for consonants</li>
+                    <li>$.50 for vowels</li>
+                </ul>
+            </div>
+            <div class="col-4 p-5 bg-success">
+                <label>Please enter your sign</label>
+                <input type="text" id="userInput" />
+                <button class="btn" id="submitBtn" onclick="userCreatedSign()">Go!</button>
+            </div>
+            <div class="col-4 text-white bg-dark">
+                <h5>Special deals:</h5>
+                <p>No deals currently.
+                    <br>Please check back later</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 p-3 text-center bg-primary">
+                <h5>Price for words:</h5>
+                <p id="priceForWords"></p>
+                <p id="numberOfWordsEntered"></p>
+            </div>
+            <div class="col-4 p-3 text-center bg-primary">
+                <h5>Price for letters:</h5>
+                <p id="priceForLetters"></p>
+                <p id="numberOfLettersEntered"></p>
+            </div>
+            <div class="col-4 p-3 text-center bg-primary">
+                <h5>Total cost:</h5>
+                <p id="totalCost"></p>
+                <p id="userTextEntered"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+
+        // Get user input data
+        function userCreatedSign() {
+            var userWordData = document.getElementById("userInput");
+            var totalPrice = document.getElementById("totalCost");
+            var userWordValue = userWordData.value.toLowerCase();
+
+            // Get the price by letter and word
+            function priceOfInput() {
+                // Make sure the user has entered input
+                if (userWordValue == null || userWordValue.trim == " ") {
+                    alert("Input needed");
+                }
+
+                // Replace excess white space with a single space
+                var newUserWordValue = userWordValue.replace(/\s+/g, ' ');
+
+                // Put the input into an array and trim the white space from the ends
+                var numOfWords = newUserWordValue.trim().split(" ");
+
+                // run a for loop to get number of letters and words
+                var numOfLetters = 0;
+                for (var i = 0; i < numOfWords.length; i++) {
+                    numOfLetters = numOfLetters + numOfWords[i].length;
+                }
+
+                // Loop through input and identify vowels
+                var vowels = ["a", "e", "i", "o", "u"];
+                var numOfVowels = 0;
+                for (var i = 0; i < vowels.length; i++) {
+                    for (var j = 0; j < userWordValue.length; j++) {
+                        if (userWordValue[j] == vowels[i]) {
+                            numOfVowels++;
+                        }
+                    }
+                }
+                finalLetterCount = numOfLetters - numOfVowels;
+
+                // Remove first word from the array
+                numOfWords.shift();
+
+                // Provide price of first and subsequent words
+                var priceWord = numOfWords.length * 0.75;
+                var priceByWordOnly = document.getElementById("priceForWords");
+                priceByWordOnly.textContent = priceWord + 2;
+
+                // Provide price by consonants
+                var priceConsonants = finalLetterCount * 1;
+
+                // Provide price by vowels
+                var priceByVowels = numOfVowels * 0.5;
+                var priceByVowelOnly = document.getElementById("priceForLetters");
+                priceByVowelOnly.textContent = priceByVowels + priceConsonants;
+
+                // Create an object to hold data for the customer to see what's being charged
+                var CustomerSign = new Object();
+                CustomerSign.numberOfWords = numOfWords.length;
+                CustomerSign.numberOfLetters = numOfLetters;
+                CustomerSign.userText = userWordValue;
+                CustomerSign.price = function () {
+                    // Add the total cost and provide it
+                    var totalOfInput = priceConsonants + priceByVowels + priceWord + 2;
+                    totalPrice.textContent = totalOfInput;
+                }
+
+                // Display number of words and letters and the final price to the user
+                var userWordsNumber = document.getElementById("numberOfWordsEntered");
+                userWordsNumber.textContent = "Words charged: " + CustomerSign.numberOfWords;
+                var userLetterNumber = document.getElementById("numberOfLettersEntered");
+                userLetterNumber.textContent = "Letters charged: " + CustomerSign.numberOfLetters;
+                var userEnteredText = document.getElementById("userTextEntered");
+                userEnteredText.textContent = "Text entered: " + CustomerSign.userText;
+                CustomerSign.price();
+            }
+            priceOfInput();
+        }
+
+    </script>
+</body>
+
+</html>
