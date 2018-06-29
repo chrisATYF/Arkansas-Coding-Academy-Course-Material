@@ -2,4 +2,4 @@
 Personal bio pages with and without Bootstrap.
 
 ### What I Learned
-HTML structure with CSS selectors and declarations. 
+We learned the basics of how to make a HTML page work and how CSS selectors could be used. 
