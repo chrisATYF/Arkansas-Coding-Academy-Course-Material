@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalWorm", "MedicalWorm\MedicalWorm.csproj", "{4F9EECF7-9296-4528-AA98-2B33AD2C9CD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalWorm.core", "MedicalWorm.core\MedicalWorm.core.csproj", "{59844387-D6CE-42C8-996A-0A8D1E3607B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F9EECF7-9296-4528-AA98-2B33AD2C9CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F9EECF7-9296-4528-AA98-2B33AD2C9CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F9EECF7-9296-4528-AA98-2B33AD2C9CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F9EECF7-9296-4528-AA98-2B33AD2C9CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59844387-D6CE-42C8-996A-0A8D1E3607B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59844387-D6CE-42C8-996A-0A8D1E3607B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59844387-D6CE-42C8-996A-0A8D1E3607B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59844387-D6CE-42C8-996A-0A8D1E3607B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77CD4080-E2FE-4AC9-820E-14D0A94A565B}
+	EndGlobalSection
+EndGlobal
