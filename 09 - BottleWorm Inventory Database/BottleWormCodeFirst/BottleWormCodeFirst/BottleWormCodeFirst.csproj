@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65D1B257-6813-4703-AE01-801B25539E4F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BottleWormCodeFirst</RootNamespace>
+    <AssemblyName>BottleWormCodeFirst</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BottleWormContext.cs" />
+    <Compile Include="Enums\AccountType.cs" />
+    <Compile Include="Enums\InventoryType.cs" />
+    <Compile Include="Migrations\201804251034035_InitialMigration.cs" />
+    <Compile Include="Migrations\201804251034035_InitialMigration.Designer.cs">
+      <DependentUpon>201804251034035_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804251453112_AddingStoreSetup.cs" />
+    <Compile Include="Migrations\201804251453112_AddingStoreSetup.Designer.cs">
+      <DependentUpon>201804251453112_AddingStoreSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804261431476_UpdatingInventoryType.cs" />
+    <Compile Include="Migrations\201804261431476_UpdatingInventoryType.Designer.cs">
+      <DependentUpon>201804261431476_UpdatingInventoryType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804262337581_CustomerNameRequired.cs" />
+    <Compile Include="Migrations\201804262337581_CustomerNameRequired.Designer.cs">
+      <DependentUpon>201804262337581_CustomerNameRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804262346136_MaxLengthCustomerName.cs" />
+    <Compile Include="Migrations\201804262346136_MaxLengthCustomerName.Designer.cs">
+      <DependentUpon>201804262346136_MaxLengthCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804262355385_TransactionsChanged.cs" />
+    <Compile Include="Migrations\201804262355385_TransactionsChanged.Designer.cs">
+      <DependentUpon>201804262355385_TransactionsChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804270002570_CreateAndUpdateDateAdded.cs" />
+    <Compile Include="Migrations\201804270002570_CreateAndUpdateDateAdded.Designer.cs">
+      <DependentUpon>201804270002570_CreateAndUpdateDateAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804270005384_IsActiveAdded.cs" />
+    <Compile Include="Migrations\201804270005384_IsActiveAdded.Designer.cs">
+      <DependentUpon>201804270005384_IsActiveAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804270013106_DefaultDateAdded.cs" />
+    <Compile Include="Migrations\201804270013106_DefaultDateAdded.Designer.cs">
+      <DependentUpon>201804270013106_DefaultDateAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804270015244_updatedDateTimeTimeAgain.cs" />
+    <Compile Include="Migrations\201804270015244_updatedDateTimeTimeAgain.Designer.cs">
+      <DependentUpon>201804270015244_updatedDateTimeTimeAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerService.cs" />
+    <Compile Include="Models\Employees.cs" />
+    <Compile Include="Models\EntityBase.cs" />
+    <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\Transactions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\UserViews.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804251034035_InitialMigration.resx">
+      <DependentUpon>201804251034035_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804251453112_AddingStoreSetup.resx">
+      <DependentUpon>201804251453112_AddingStoreSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804261431476_UpdatingInventoryType.resx">
+      <DependentUpon>201804261431476_UpdatingInventoryType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804262337581_CustomerNameRequired.resx">
+      <DependentUpon>201804262337581_CustomerNameRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804262346136_MaxLengthCustomerName.resx">
+      <DependentUpon>201804262346136_MaxLengthCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804262355385_TransactionsChanged.resx">
+      <DependentUpon>201804262355385_TransactionsChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804270002570_CreateAndUpdateDateAdded.resx">
+      <DependentUpon>201804270002570_CreateAndUpdateDateAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804270005384_IsActiveAdded.resx">
+      <DependentUpon>201804270005384_IsActiveAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804270013106_DefaultDateAdded.resx">
+      <DependentUpon>201804270013106_DefaultDateAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804270015244_updatedDateTimeTimeAgain.resx">
+      <DependentUpon>201804270015244_updatedDateTimeTimeAgain.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
