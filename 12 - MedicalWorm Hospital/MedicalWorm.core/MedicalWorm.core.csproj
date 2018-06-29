@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59844387-D6CE-42C8-996A-0A8D1E3607B9}</ProjectGuid>
+    <ProjectGuid>{AED9AD51-8DB6-45BF-99E1-83A4F51810A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MedicalWorm.core</RootNamespace>
-    <AssemblyName>MedicalWorm.core</AssemblyName>
+    <RootNamespace>MedicalWorm.Core</RootNamespace>
+    <AssemblyName>MedicalWorm.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,15 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\EnumExtentions.cs" />
+    <Compile Include="Enums\EnumExtensions.cs" />
     <Compile Include="Enums\MedicalLicense.cs" />
     <Compile Include="Enums\NursingCertification.cs" />
     <Compile Include="Interfaces\IEmployee.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\EmployeeBase.cs" />
+    <Compile Include="Models\Janitor.cs" />
     <Compile Include="Models\Nurse.cs" />
+    <Compile Include="Enums\MedicalSpeciality.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

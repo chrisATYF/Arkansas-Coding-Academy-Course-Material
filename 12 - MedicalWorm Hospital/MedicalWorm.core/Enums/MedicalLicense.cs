@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MedicalWorm.core.Enums
+﻿namespace MedicalWorm.Core.Enums
 {
     public enum MedicalLicense
     {
-        DoctorOfOsteopathicMedicine = 1,
-        DoctorOfMedicine = 2
+        DoctorofOsteopathicMedicine = 1,
+        DoctorofMedicine = 2
     }
 }

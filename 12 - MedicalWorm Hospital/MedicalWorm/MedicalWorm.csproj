@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4F9EECF7-9296-4528-AA98-2B33AD2C9CD1}</ProjectGuid>
+    <ProjectGuid>{CF780973-F82A-4284-A878-2DB0366A50D0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>MedicalWorm</RootNamespace>
     <AssemblyName>MedicalWorm</AssemblyName>
@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MedicalWorm.core\MedicalWorm.core.csproj">
-      <Project>{59844387-d6ce-42c8-996a-0a8d1e3607b9}</Project>
-      <Name>MedicalWorm.core</Name>
+    <ProjectReference Include="..\MedicalWorm.Core\MedicalWorm.Core.csproj">
+      <Project>{aed9ad51-8db6-45bf-99e1-83a4f51810a5}</Project>
+      <Name>MedicalWorm.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

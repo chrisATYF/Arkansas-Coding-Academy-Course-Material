@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MedicalWorm.core.Interfaces
+﻿namespace MedicalWorm.Core.Interfaces
 {
     public interface IEmployee
     {
-        string printBadge();
+        string PrintBadge();
         decimal CalculatePay();
     }
 }
