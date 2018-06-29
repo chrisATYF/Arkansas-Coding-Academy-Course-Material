@@ -13,4 +13,6 @@
 9. Which book has the greatest difference between the Price and the LatePrice?
 10. Which author had the most books checked out (and returned) in Feb 2017?
 
+![alt text](https://github.com/chrisATYF/Arkansas-Coding-Academy-Course-Material/blob/master/08%20-%20BookWorm%20Library%20Database/dbDiagram.png "Db Diagram")
+
 #### What I Learned
