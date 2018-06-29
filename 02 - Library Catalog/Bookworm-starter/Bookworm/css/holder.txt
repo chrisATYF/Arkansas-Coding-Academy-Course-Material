@@ -1,0 +1,19 @@
+@Html.Partial("Shared/_Hobbies", Model)
+
+@model ProfileWorm.Models.Profile
+
+<div class="row">
+    <div class="col">
+        <h3>Hobbies</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            @foreach (var hobby in Model.Hobbies)
+            {
+                <li class="list-group-item">@hobby.Name <a href="@Url.RouteUrl("HobbyDelete", new { id = hobby.Id })" class="btn btn-danger">Delete</a></li>
+            }
+        </ul>
+    </div>
+</div>

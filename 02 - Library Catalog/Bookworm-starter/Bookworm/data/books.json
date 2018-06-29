@@ -1,0 +1,31 @@
+{
+    "books": [{
+        "id": 1,
+        "title": "The Traveler's Gift",
+        "author": "Andy Andrews",
+        "genre": "Self-Help",
+        "coverUrl": "https://images.gr-assets.com/books/1380857528l/56466.jpg"
+    },
+    {
+        "id": 2,
+        "title": "The C# Player's Guide (3rd Edition)",
+        "author": "R.B. Whitaker",
+        "genre": "Technology",
+        "coverUrl": "https://images.gr-assets.com/books/1492977477s/34943126.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Javascript & JQuery",
+        "author": "Jon Duckett",
+        "genre": "Technology",
+        "coverUrl": "https://images.gr-assets.com/books/1394412494s/16219704.jpg"
+    },
+    {
+        "id": 4,
+        "title": "HTML & CSS",
+        "author": "Jon Duckett",
+        "genre": "Technology",
+        "coverUrl": "https://images.gr-assets.com/books/1348805097s/10361330.jpg"
+    }],
+    "__source": "https://www.goodreads.com"
+}
